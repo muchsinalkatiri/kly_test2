@@ -42,8 +42,7 @@ class AccountController extends Controller
             "confirm_password" => "same:password"
             ]);
 
-
-        DB::table('users')->where('id',$request->id)->update([
+        DB::table('users')->insert([
             'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password),
@@ -70,7 +69,7 @@ class AccountController extends Controller
             ]);
 
 
-        DB::table('users')->insert([
+        DB::table('users')->where('id',$request->id)->update([
             'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password),

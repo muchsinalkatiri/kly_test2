@@ -30,3 +30,10 @@ Route::get('/account/update/{id}', 'AccountController@update');
 Route::post('/account/update_proses','AccountController@update_proses');
 
 Route::get('/data', 'DataController@index')->name('data');
+Route::get('/data/create', 'DataController@create')->name('data_create');
+Route::post('/data/create_proses','DataController@create_proses');
+Route::get('/data/delete/{nama_file}', 'DataController@delete');
+Route::get('/data/detail/{nama_file}', 'DataController@detail');
+Route::get('/data/update/{nama_file}', 'DataController@update');
+Route::post('/data/update_proses','DataController@update_proses');
+
